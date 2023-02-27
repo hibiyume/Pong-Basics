@@ -17,8 +17,7 @@ public class TextBehaviour : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            textNumber++;
-            myText.text = textNumber < 10 ? $"0{textNumber}" : textNumber.ToString();
+            
         }
     }
 }
