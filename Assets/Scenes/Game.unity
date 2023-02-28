@@ -1495,8 +1495,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ffaeec777240c54ca2cf1ee10f18987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1ScoreText: {fileID: 2079068146}
-  player2ScoreText: {fileID: 1418485577}
+  player1Transform: {fileID: 868229215}
+  player2Transform: {fileID: 1734316300}
+  ballTransform: {fileID: 1934516480}
 --- !u!1 &1418485575
 GameObject:
   m_ObjectHideFlags: 0
