@@ -9,6 +9,7 @@ public class BallBehaviour : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float startingGameTime;
     [SerializeField] private float bounceAngleCoefficient;
+    [SerializeField] private ScoreBehaviour _scoreBehaviour;
     private Vector2 previousVelocity;
 
     private Rigidbody2D _rigidbody2D;
@@ -32,10 +33,10 @@ public class BallBehaviour : MonoBehaviour
                 _rigidbody2D.velocity = new Vector2(previousVelocity.x, -previousVelocity.y);
                 break;
             case "LosingWallPlayer1":
-                //TODO player1 has lost
+                _scoreBehaviour.IncreasePlayer2Score();
                 break;
             case "LosingWallPlayer2":
-                //TODO player2 has lost
+                _scoreBehaviour.IncreasePlayer1Score();
                 break;
             case "Player":
                 _rigidbody2D.velocity = -previousVelocity;

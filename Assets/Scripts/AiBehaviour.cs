@@ -23,7 +23,7 @@ public class AiBehaviour : MonoBehaviour
     void Update()
     {
         _rigidbody2D.velocity = Vector2.zero;
-        if (ballTransform.position.y > _transform.position.y)
+        if (ballTransform.position.y > _transform.position.y && GameManager.IsInputEnabled)
         {
             _transform.position = new Vector2(_transform.position.x,
                 Mathf.Clamp(ballTransform.position.y, _transform.position.y - (speed * Time.deltaTime),
@@ -31,7 +31,7 @@ public class AiBehaviour : MonoBehaviour
             //_rigidbody2D.velocity = new Vector2(0f, speed);
         }
 
-        if (ballTransform.position.y < _transform.position.y)
+        if (ballTransform.position.y < _transform.position.y && GameManager.IsInputEnabled)
         {
             _transform.position = new Vector2(_transform.position.x,
                 Mathf.Clamp(ballTransform.position.y, _transform.position.y - (speed * Time.deltaTime),
