@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class GameManager
+public class GameManager : MonoBehaviour
 {
-    public static int Player1Score { get; set; }
-    public static int Player2Score { get; set; }
-    
-    public static bool IsInputEnabled { get; set; } = true;
+    public static int Player1Score { get; set; } = 0;
+    public static int Player2Score { get; set; } = 0;
 }

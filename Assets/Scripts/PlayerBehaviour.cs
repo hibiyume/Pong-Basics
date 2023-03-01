@@ -20,12 +20,12 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
         _rigidbody2D.velocity = Vector2.zero;
-        if (Input.GetKey(KeyCode.UpArrow) && GameManager.IsInputEnabled)
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             _rigidbody2D.velocity = new Vector2(0f, speed);
         }
 
-        if (Input.GetKey(KeyCode.DownArrow) && GameManager.IsInputEnabled)
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             _rigidbody2D.velocity = new Vector2(0f, -speed);
         }

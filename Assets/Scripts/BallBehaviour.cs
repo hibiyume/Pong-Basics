@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class BallBehaviour : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    public float speed;
     [SerializeField] private float startingGameTime;
     [SerializeField] private float bounceAngleCoefficient;
     [SerializeField] private ScoreBehaviour _scoreBehaviour;
@@ -33,9 +33,11 @@ public class BallBehaviour : MonoBehaviour
                 _rigidbody2D.velocity = new Vector2(previousVelocity.x, -previousVelocity.y);
                 break;
             case "LosingWallPlayer1":
+                _rigidbody2D.velocity = Vector2.zero;
                 _scoreBehaviour.IncreasePlayer2Score();
                 break;
             case "LosingWallPlayer2":
+                _rigidbody2D.velocity = Vector2.zero;
                 _scoreBehaviour.IncreasePlayer1Score();
                 break;
             case "Player":
