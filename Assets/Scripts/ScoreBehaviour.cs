@@ -29,8 +29,6 @@ public class ScoreBehaviour : MonoBehaviour
         ball.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         
         yield return new WaitForSeconds(1.5f);
-        player1Transform.position = player1DefaultPosition;
-        player2Transform.position = player2DefaultPosition;
         ball.transform.position = ballDefaultPosition;
         
         yield return new WaitForSeconds(1.5f);
@@ -43,18 +41,24 @@ public class ScoreBehaviour : MonoBehaviour
         player1ScoreText.text = GameManager.Player1Score.ToString();
 
         if (GameManager.Player1Score == ScoresToWin)
+        {
+            GameOverController.winnerPlayer = "Player1";
             SceneManager.LoadScene(2); //Game over
+        }
         else
             StartCoroutine(ResetGameField());
     }
-    
+
     public void IncreasePlayer2Score()
     {
         GameManager.Player2Score++;
         player2ScoreText.text = GameManager.Player2Score.ToString();
-        
+
         if (GameManager.Player2Score == ScoresToWin)
+        {
+            GameOverController.winnerPlayer = "Player2";
             SceneManager.LoadScene(2); //Game over
+        }
         else
             StartCoroutine(ResetGameField());
     }

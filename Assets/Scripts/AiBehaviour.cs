@@ -23,21 +23,11 @@ public class AiBehaviour : MonoBehaviour
     void Update()
     {
         _rigidbody2D.velocity = Vector2.zero;
-        if (ballTransform.position.y > _transform.position.y)
-        {
-            _transform.position = new Vector2(_transform.position.x,
-                Mathf.Clamp(ballTransform.position.y, _transform.position.y - (speed * Time.deltaTime),
-                    _transform.position.y + (speed * Time.deltaTime)));
-            //_rigidbody2D.velocity = new Vector2(0f, speed);
-        }
+        _transform.position = new Vector2(_transform.position.x,
+            Mathf.Clamp(ballTransform.position.y, _transform.position.y - (speed * Time.deltaTime),
+                _transform.position.y + (speed * Time.deltaTime)));
+        //_rigidbody2D.velocity = new Vector2(0f, -speed);
 
-        if (ballTransform.position.y < _transform.position.y)
-        {
-            _transform.position = new Vector2(_transform.position.x,
-                Mathf.Clamp(ballTransform.position.y, _transform.position.y - (speed * Time.deltaTime),
-                    _transform.position.y + (speed * Time.deltaTime)));
-            //_rigidbody2D.velocity = new Vector2(0f, -speed);
-        }
 
         Vector2 clampedPosition = _transform.position;
         clampedPosition.y = Mathf.Clamp(_transform.position.y, MinClamp, MaxClamp);

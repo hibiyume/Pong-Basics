@@ -1460,6 +1460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1390697895}
+  - component: {fileID: 1390697897}
   - component: {fileID: 1390697896}
   m_Layer: 0
   m_Name: GameManager
@@ -1495,9 +1496,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ffaeec777240c54ca2cf1ee10f18987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1ScoreText: {fileID: 2079068146}
+  player2ScoreText: {fileID: 1418485577}
   player1Transform: {fileID: 868229215}
   player2Transform: {fileID: 1734316300}
-  ballTransform: {fileID: 1934516480}
+  ball: {fileID: 1934516479}
+--- !u!114 &1390697897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390697894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 108c47a798133a04f8a207609af06609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1418485575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2289,6 +2304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  speedScale: 1.04
   startingGameTime: 1.5
   bounceAngleCoefficient: 5
   _scoreBehaviour: {fileID: 1390697896}
@@ -2317,7 +2333,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &2034815171
 GameObject:

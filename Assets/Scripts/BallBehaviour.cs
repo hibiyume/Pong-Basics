@@ -7,6 +7,7 @@ using UnityEngine;
 public class BallBehaviour : MonoBehaviour
 {
     public float speed;
+    [SerializeField] private float speedScale;
     [SerializeField] private float startingGameTime;
     [SerializeField] private float bounceAngleCoefficient;
     [SerializeField] private ScoreBehaviour _scoreBehaviour;
@@ -25,7 +26,7 @@ public class BallBehaviour : MonoBehaviour
         previousVelocity = _rigidbody2D.velocity;
     }
 
-    void OnCollisionEnter2D(Collision2D col) // TODO adjust movement to speed
+    void OnCollisionEnter2D(Collision2D col)
     {
         switch (col.gameObject.tag)
         {
@@ -46,7 +47,7 @@ public class BallBehaviour : MonoBehaviour
                 Vector2 colPosition = col.transform.position;
                 Vector2 playerPosition = transform.position;
                 float heightDifference = playerPosition.y - colPosition.y;
-                _rigidbody2D.velocity = new Vector2(-previousVelocity.x, heightDifference * bounceAngleCoefficient);
+                _rigidbody2D.velocity = new Vector2(-previousVelocity.x * speedScale, heightDifference * bounceAngleCoefficient);
                 break;
         }
     }
